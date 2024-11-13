@@ -10,7 +10,7 @@ TRAIN:
   CHECKPOINT_PERIOD: 10
   AUTO_RESUME: True
 DATA:
-  PATH_TO_DATA_DIR: "/datax/Maack/surgical_computer_vision/MultiBypass140/datasets/clip_based_MultiByPass140/BernByPass70/split_id_0_testout" # new
+  PATH_TO_DATA_DIR: "/datax/Maack/surgical_computer_vision/MultiBypass140/datasets/clip_based_MultiByPass140/BernByPass70/split_id_0" # new
   MEAN:  [0.3568306,  0.21646159, 0.19071079] # before: [0.45, 0.45, 0.45]
   STD: [0.24839819, 0.17734797, 0.16686346] # before [0.225, 0.225, 0.225]
   PATH_LABEL_SEPARATOR: "," # new
@@ -78,7 +78,7 @@ SOLVER:
   LR_POLICY: cosine
   COSINE_AFTER_WARMUP: True
   COSINE_END_LR: 1e-6
-  MAX_EPOCH: 3 # new
+  MAX_EPOCH: 150 # new
   WARMUP_EPOCHS: 10.0
   MOMENTUM: 0.9
   WEIGHT_DECAY: 0.05
@@ -97,7 +97,7 @@ TEST:
   NUM_SPATIAL_CROPS: 1
   NUM_TEMPORAL_CLIPS: [5, 10]
 DATA_LOADER:
-  NUM_WORKERS: 24
+  NUM_WORKERS: 8
   PIN_MEMORY: True
 NUM_GPUS: 1 # new
 NUM_SHARDS: 1
