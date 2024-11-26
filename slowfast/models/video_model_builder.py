@@ -1242,6 +1242,8 @@ class MViT(nn.Module):
                 else:  # this is default, [norm->mean]
                     x = self.norm(x)
                     x = x.mean(1)
+                
+                feature = x.clone()
                 x = self.head(x)
 
-        return x
+        return x, feature
